@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: my-app-container
-        image: git.codenrock.com:5050/avito-testirovanie-na-backend-1270/cnrprod1725741033-team-78604/zadanie-6105:07e45b51a5802f9a1cc44865866b8832be92e9af
+        image: ${{ secrets.DOCKER_USERNAME }}/avitoproject:latest
         ports:
         - containerPort: 8080
         env:
