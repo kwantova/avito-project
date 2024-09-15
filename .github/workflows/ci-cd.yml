@@ -51,11 +51,11 @@ jobs:
       - name: Set up Kubeconfig
         run: |
           mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
+          echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/cnrprod1725741033-team-78604.kube
 
 
       - name: Apply Kubernetes manifests
         run: |
-          kubectl apply -f deployment.yaml
-          kubectl apply -f configmap.yaml
-          kubectl apply -f secret.yaml
+          kubectl --kubeconfig=$HOME/.kube/cnrprod1725741033-team-78604.kube apply -f deployment.yaml
+          kubectl --kubeconfig=$HOME/.kube/cnrprod1725741033-team-78604.kube apply -f configmap.yaml
+          kubectl --kubeconfig=$HOME/.kube/cnrprod1725741033-team-78604.kube apply -f secret.yaml
