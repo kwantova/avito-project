@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  namespace: cnrprod1725741033-team-78604
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app-container
+        image: git.codenrock.com:5050/avito-testirovanie-na-backend-1270/cnrprod1725741033-team-78604/zadanie-6105:07e45b51a5802f9a1cc44865866b8832be92e9af
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SERVER_ADDRESS
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: SERVER_ADDRESS
+        - name: POSTGRES_CONN
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: POSTGRES_CONN
