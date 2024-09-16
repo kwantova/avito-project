@@ -30,4 +30,3 @@ HELP.md
 .vscode/
 .env
 docker-compose.yml
-secret.yaml
