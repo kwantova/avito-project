@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: my-app-container
-        image: ${{ secrets.DOCKER_USERNAME }}/my-app:latest
+        image: kwantova/my-app:latest
         ports:
         - containerPort: 8080
         env:
