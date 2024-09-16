@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: my-app-container
-        image: kwantova/my-app:latest
+        image: ${{ secrets.DOCKER_USERNAME }}/my-app:latest
         ports:
         - containerPort: 8080
         env:
@@ -26,11 +26,11 @@ spec:
               key: SERVER_ADDRESS
         - name: POSTGRES_CONN
           valueFrom:
-            configMapKeyRef:
-              name: app-config
+            secretKeyRef:
+              name: app-secrets
               key: POSTGRES_CONN
         - name: POSTGRES_PASSWORD
           valueFrom:
-            configMapKeyRef:
-              name: app-config
+            secretKeyRef:
+              name: app-secrets
               key: POSTGRES_PASSWORD
