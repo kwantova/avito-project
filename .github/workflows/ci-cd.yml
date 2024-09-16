@@ -35,7 +35,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/my-app:latest
+          tags: kwantova/my-app:latest
 
   deploy:
     needs: build
