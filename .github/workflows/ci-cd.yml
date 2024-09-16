@@ -58,4 +58,3 @@ jobs:
         run: |
           kubectl --kubeconfig=$HOME/.kube/cnrprod1725741033-team-78604.kube apply -f deployment.yaml
           kubectl --kubeconfig=$HOME/.kube/cnrprod1725741033-team-78604.kube apply -f configmap.yaml
-          kubectl --kubeconfig=$HOME/.kube/cnrprod1725741033-team-78604.kube apply -f secret.yaml
